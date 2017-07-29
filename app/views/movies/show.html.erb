@@ -21,7 +21,11 @@
       <dd><%= @movie.image_url %></dd>
 
       <dt>Director</dt>
-      <dd><%= @movie.director_id %></dd>
+      <dd><%= Director.find_by(:id => @movie.director_id).name %></dd>
+      
+      <dt>Link to Director</dt>
+      <dd><a href="/directors/<%= @movie.director_id %>">Director</a></dd>
+
 
     </dl>
 
