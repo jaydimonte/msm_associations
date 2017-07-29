@@ -16,6 +16,12 @@
 
       <dt>Image url</dt>
       <dd><img src="<%= @actor.image_url %>"></dd>
+      
+      <dt>Number of characters</dt>
+      <dd><%= Character.where(:actor_id => @actor.id).count %></dd>
+
+
+
 
     </dl>
 
