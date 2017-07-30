@@ -21,8 +21,9 @@
       <dd><%= @movie.image_url %></dd>
 
       <dt>Director</dt>
-      <dd><%= Director.find_by(:id => @movie.director_id).name %></dd>
-      
+      <!--<dd><%= Director.find_by(:id => @movie.director_id).name %></dd>-->
+      <dd><%= @movie.director.name %></dd>
+            
       <dt>Link to Director</dt>
       <dd><a href="/directors/<%= @movie.director_id %>">Director</a></dd>
       
@@ -47,12 +48,20 @@
   </div>
 </div>
 
-<ul>
-  <% Character.where(:movie_id => @movie.id).each do |character| %>
-    <li><%= Actor.find_by(:id => character.actor_id).name %></li>
+
+
+<!--OLD WAY OF DOING THE LOOKUP-->
+<!--<ul>-->
+<!--  <% Character.where(:movie_id => @movie.id).each do |character| %>-->
+<!--    <li><%= Actor.find_by(:id => character.actor_id).name %></li>-->
     
+<!--    <% end %>-->
+<!--</ul>-->
+
+<ul>
+    <% @movie.characters.each do |character| %>
+    <li><%= character.actor.name %>(<%=character.name%>)</li>
     <% end %>
-  
 </ul>
 
 

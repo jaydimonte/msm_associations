@@ -20,9 +20,12 @@
       <dt>Number of characters</dt>
       <dd><%= Character.where(:actor_id => @actor.id).count %></dd>
 
-
-
-
+      <ul>
+          <% @actor.characters.each do |character| %>
+          <li><%=character.name%></li>
+          <% end %>
+      </ul>
+      
     </dl>
 
     <div class="btn-group btn-group-justified">
