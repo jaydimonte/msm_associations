@@ -20,6 +20,6 @@ class Director < ApplicationRecord
 #  - bio: no rules
 #  - image_url: no rules
         
-    has_many(:movies, :class_name => "Movies", :foreign_key => "director_id")
+    has_many(:movies, :class_name => "Movie", :foreign_key => "director_id")
         
 end
