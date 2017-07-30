@@ -21,7 +21,6 @@
       <dd><%= @movie.image_url %></dd>
 
       <dt>Director</dt>
-      <!--<dd><%= Director.find_by(:id => @movie.director_id).name %></dd>-->
       <dd><%= @movie.director.name %></dd>
             
       <dt>Link to Director</dt>
@@ -75,7 +74,7 @@
           Movie
         </label>
 
-      <%= select_tag("movie_id", options_from_collection_for_select(Movie.all, :id, :title, @character.movie_id), :class => "form-control") %>
+        <input type="hidden" id="movie_id" name="movie_id" class="form-control" value="<%= @movie.id %>">
       </div>
 
       <!-- Label and input for actor_id -->

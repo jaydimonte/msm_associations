@@ -70,7 +70,8 @@
           Actor
         </label>
 
-      <%= select_tag("actor_id", options_from_collection_for_select(Actor.all, :id, :name, @character.actor_id), :class => "form-control") %>
+      <!--<%= select_tag("actor_id", options_from_collection_for_select(Actor.all, :id, :name, @character.actor_id), :class => "form-control") %>-->
+      <input type="hidden" id="actor_id" name="actor_id" class="form-control" value="<%= @actor.id %>">
       </div>
 
       <!-- Label and input for name -->
